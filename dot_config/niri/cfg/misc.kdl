@@ -1,0 +1,33 @@
+    prefer-no-csd
+    screenshot-path "~/图片/screenshot/%Y-%m-%d %H-%M-%S.png"
+    
+    cursor {
+    xcursor-theme "polarnight"
+    xcursor-size 24
+    }
+
+    environment {
+        ELECTRON_OZONE_PLATFORM_HINT "auto"
+        QT_QPA_PLATFORM "wayland"
+        QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+        XDG_SESSION_TYPE "wayland"
+        XDG_SESSION_DESKTOP "kde"
+        XDG_CURRENT_DESKTOP "niri"
+        QT_QPA_PLATFORMTHEME "qt6ct"
+        GTK_IM_MODULE "fcitx"
+        QT_IM_MODULE "fcitx"
+        XMODIFIERS "@im fcitx"
+        SDL_IM_MODULE "fcitx"
+        GLFW_IM_MODULE "ibus"
+        XDG_MENU_PREFIX "arch-"
+        GTK_ICON_THEME "Tela-circle"
+    }
+
+    debug {
+        // Allows notification actions and window activation from Noctalia.
+        honor-xdg-activation-with-invalid-serial
+    }
+
+    hotkey-overlay {
+       skip-at-startup
+    }

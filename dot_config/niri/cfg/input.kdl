@@ -1,0 +1,26 @@
+// ────────────── Input Configuration ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+            layout "us" // Use the American keyboard layout
+        }
+        numlock // Enable numlock on startup
+    }
+    // cursor {
+        // 设置光标主题
+         //   theme {
+         //   name "Polarnight Cursor"
+         //   size 24
+      //  }
+  //  }
+
+    touchpad {
+        tap // Enable tap-to-click
+        natural-scroll // Enable natural (macOS-style) scrolling
+    }
+
+    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    workspace-auto-back-and-forth // Enable workspace back & forth switching
+}

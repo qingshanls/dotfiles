@@ -1,0 +1,145 @@
+binds {
+    // ────────────── 快捷键绑定 ──────────────
+    // 参考文档: https://github.com/YaLTeR/niri/wiki/Configuration#Key-Bindings
+    // Noctalia-shell 文档: https://docs.noctalia.dev/getting-started/keybinds/
+
+    // ─── 系统功能 ───
+    Mod+Shift+ESCAPE                     { show-hotkey-overlay; }                    // 显示快捷键覆盖层（帮助菜单）
+
+    // ─── 应用程序启动 ───
+    Mod+Return                          { spawn "kitty"; }                    // 打开终端: kitty
+    Mod+CTRL+Return                     { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }  // 打开应用启动器
+    Mod+B                               { spawn "firefox-nightly"; }                 // 打开浏览器: Firefox
+    Mod+ALT+L                           { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }          // 锁定屏幕
+    Mod+Shift+Q                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; } // 会话菜单（关机/重启/注销等）
+    Mod+E                               { spawn "dolphin"; }              // 打开文件管理器: Nautilus（可按需替换）
+    Mod+V                               { spawn "copyq" "toggle"; }
+    
+    // ─── 媒体控制 ───
+    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }   // 音量+（锁屏时可用）
+    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }   // 音量-（锁屏时可用）
+    XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; } // 静音输出（锁屏时可用）
+    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }  // 静音麦克风（锁屏时可用）
+    XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }        // 下一首（锁屏时可用）
+    XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }    // 上一首（锁屏时可用）
+    XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
+    XF86AudioPause                      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
+
+    // ─── 亮度控制 ───
+    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }  // 亮度+（锁屏时可用）
+    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }  // 亮度-（锁屏时可用）
+
+    // ─── 窗口管理：关闭与聚焦 ───
+    Mod+Q                               { close-window; }                                           // 关闭当前窗口
+
+    Mod+R                               { switch-preset-column-width; }
+
+    // 方向键聚焦（Vim 风格 + 箭头键）
+    Mod+Left                            { focus-column-left; }                                      // 聚焦左侧列
+    Mod+H                               { focus-column-left; }                                      // 聚焦左侧列（Vim H）
+    Mod+Right                           { focus-column-right; }                                     // 聚焦右侧列
+    Mod+L                               { focus-column-right; }                                     // 聚焦右侧列（Vim L）
+    Mod+Up                              { focus-window-up; }                                        // 聚焦上方窗口
+    Mod+K                               { focus-window-up; }                                        // 聚焦上方窗口（Vim K）
+    Mod+Down                            { focus-window-down; }                                      // 聚焦下方窗口
+    Mod+J                               { focus-window-down; }                                      // 聚焦下方窗口（Vim J）
+
+    // 移动窗口/列（Ctrl+方向键）
+    Mod+CTRL+Left                       { move-column-left; }                                       // 将当前列左移
+    Mod+CTRL+H                          { move-column-left; }                                       // 将当前列左移（Vim H）
+    Mod+CTRL+Right                      { move-column-right; }                                      // 将当前列右移
+    Mod+CTRL+L                          { move-column-right; }                                      // 将当前列右移（Vim L）
+    Mod+CTRL+UP                         { move-window-up; }                                         // 将窗口上移
+    Mod+CTRL+K                          { move-window-up; }                                         // 将窗口上移（Vim K）
+    Mod+CTRL+Down                       { move-window-down; }                                       // 将窗口下移
+    Mod+CTRL+J                          { move-window-down; }                                       // 将窗口下移（Vim J）
+
+    // 跳转到首/末列
+    Mod+Home                            { focus-column-first; }                                     // 聚焦第一列
+    Mod+End                             { focus-column-last; }                                      // 聚焦最后一列
+    Mod+CTRL+Home                       { move-column-to-first; }                                   // 将当前列移到最前
+    Mod+CTRL+End                        { move-column-to-last; }                                    // 将当前列移到最后
+
+    // ─── 多显示器管理 ───
+    Mod+Shift+Left                      { focus-monitor-left; }                                     // 聚焦左侧显示器
+    Mod+Shift+Right                     { focus-monitor-right; }                                    // 聚焦右侧显示器
+    Mod+Shift+UP                        { focus-monitor-up; }                                       // 聚焦上方显示器
+    Mod+Shift+Down                      { focus-monitor-down; }                                     // 聚焦下方显示器
+
+    // 将列移动到其它显示器
+    Mod+Shift+CTRL+Left                 { move-column-to-monitor-left; }                            // 将列移到左侧显示器
+    Mod+Shift+CTRL+Right                { move-column-to-monitor-right; }                           // 将列移到右侧显示器
+    Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }                              // 将列移到上方显示器
+    Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; }                            // 将列移到下方显示器
+
+    // ─── 工作区切换 ───
+    // 鼠标滚轮切换
+    Mod+WheelScrollDown                 cooldown-ms=150 { focus-workspace-down; }                   // 切换到下一个工作区（带防抖）
+    Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }                     // 切换到上一个工作区（带防抖）
+    Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }          // 将当前列移到下一个工作区
+    Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }            // 将当前列移到上一个工作区
+
+    // 横向滚轮/触控板手势
+    Mod+WheelScrollRight                { focus-column-right; }                                     // 横向滚动 → 聚焦右列
+    Mod+WheelScrollLeft                 { focus-column-left; }                                      // 横向滚动 → 聚焦左列
+    Mod+CTRL+WheelScrollRight           { move-column-right; }                                      // Ctrl+横向滚动 → 右移当前列
+    Mod+CTRL+WheelScrollLeft            { move-column-left; }                                       // Ctrl+横向滚动 → 左移当前列
+
+    // Shift+横向滚动（与上面功能重复，可按需修改）
+    Mod+Shift+WheelScrollDown           { focus-column-right; }                                     // Shift+滚轮下 → 聚焦右列
+    Mod+Shift+WheelScrollUp             { focus-column-left; }                                      // Shift+滚轮上 → 聚焦左列
+    Mod+CTRL+Shift+WheelScrollDown      { move-column-right; }                                      // Ctrl+Shift+滚轮下 → 右移当前列
+    Mod+CTRL+Shift+WheelScrollUp        { move-column-left; }                                       // Ctrl+Shift+滚轮上 → 左移当前列
+
+    // 数字键直达工作区
+    Mod+1                               { focus-workspace 1; }                                      // 切换到工作区 1
+    Mod+2                               { focus-workspace 2; }                                      // 切换到工作区 2
+    Mod+3                               { focus-workspace 3; }                                      // 切换到工作区 3
+    Mod+4                               { focus-workspace 4; }                                      // 切换到工作区 4
+    Mod+5                               { focus-workspace 5; }                                      // 切换到工作区 5
+    Mod+6                               { focus-workspace 6; }                                      // 切换到工作区 6
+    Mod+7                               { focus-workspace 7; }                                      // 切换到工作区 7
+    Mod+8                               { focus-workspace 8; }                                      // 切换到工作区 8
+    Mod+9                               { focus-workspace 9; }                                      // 切换到工作区 9
+
+    // Ctrl+数字键：移动当前列到指定工作区
+    Mod+CTRL+1                          { move-column-to-workspace 1; }                             // 将当前列移到工作区 1
+    Mod+CTRL+2                          { move-column-to-workspace 2; }                             // 将当前列移到工作区 2
+    Mod+CTRL+3                          { move-column-to-workspace 3; }                             // 将当前列移到工作区 3
+    Mod+CTRL+4                          { move-column-to-workspace 4; }                             // 将当前列移到工作区 4
+    Mod+CTRL+5                          { move-column-to-workspace 5; }                             // 将当前列移到工作区 5
+    Mod+CTRL+6                          { move-column-to-workspace 6; }                             // 将当前列移到工作区 6
+    Mod+CTRL+7                          { move-column-to-workspace 7; }                             // 将当前列移到工作区 7
+    Mod+CTRL+8                          { move-column-to-workspace 8; }                             // 将当前列移到工作区 8
+    Mod+CTRL+9                          { move-column-to-workspace 9; }                             // 将当前列移到工作区 9
+
+    Mod+TAB                             { focus-workspace-previous; }                               // 切换到上一个工作区（类似 Alt+Tab）
+
+    // ─── 布局控制 ───
+    Mod+CTRL+F                          { expand-column-to-available-width; }                       // 展开当前列至可用宽度
+    Mod+C                               { center-column; }                                          // 居中当前列
+    Mod+CTRL+C                          { center-visible-columns; }                                 // 居中所有可见列
+    Mod+Minus                           { set-column-width "-10%"; }                                // 列宽减少 10%
+    Mod+Equal                           { set-column-width "+10%"; }                                // 列宽增加 10%
+    Mod+Shift+Minus                     { set-window-height "-10%"; }                               // 窗口高度减少 10%
+    Mod+Shift+Equal                     { set-window-height "+10%"; }                               // 窗口高度增加 10%
+
+    // ─── 显示模式 ───
+    Mod+T                               { toggle-window-floating; }                                 // 切换窗口浮动/平铺模式
+    Mod+F                               { fullscreen-window; }                                      // 切换窗口全屏
+    Mod+W                               { toggle-column-tabbed-display; }                           // 切换列的标签页显示模式
+
+    // ─── 截图功能 ───
+    ALT+F1                        { screenshot; }                                             // 全屏截图
+    CTRL+Shift+2                        { screenshot-screen; }                                      // 当前显示器截图
+    CTRL+Shift+3                        { screenshot-window; }                                      // 当前窗口截图
+
+    // ─── 紧急逃脱键 ───
+    // 当全屏应用拦截快捷键时使用，可禁用键盘快捷键拦截，恢复控制
+    Mod+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }  // 切换快捷键拦截状态（紧急恢复控制）
+
+    // ─── 退出/电源管理 ───
+    CTRL+ALT+Delete                     { quit; }                                                   // 退出 Niri（谨慎使用）
+    Mod+Shift+P                         { power-off-monitors; }                                     // 关闭显示器（OLED 省电/隐私保护）
+    Mod+O                               repeat=false { toggle-overview; }                           // 切换概览模式（窗口预览）
+}
