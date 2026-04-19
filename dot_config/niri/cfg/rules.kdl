@@ -21,7 +21,7 @@
     window-rule {
     match app-id="code"
     draw-border-with-background false
-    opacity 0.93
+    opacity 0.9
     } 
 
     window-rule {
