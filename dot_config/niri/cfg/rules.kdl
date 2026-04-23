@@ -1,6 +1,15 @@
     window-rule {
         geometry-corner-radius 2 // Set every window radius to 20
         clip-to-geometry true
+
+
+        background-effect {
+            xray true
+            blur true
+            noise 0.09
+            saturation 1
+        }
+        
     }
 
     layer-rule {
