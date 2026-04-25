@@ -2,8 +2,8 @@
     screenshot-path "~/图片/screenshot/%Y-%m-%d %H-%M-%S.png"
     
     cursor {
-    xcursor-theme "polarnight"
-    xcursor-size 24
+        xcursor-theme "初音"
+        xcursor-size 40 
     }
 
     environment {

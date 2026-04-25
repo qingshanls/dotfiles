@@ -23,28 +23,29 @@
     }
 
     window-rule {
-    match app-id="kitty"  // 终端
-    opacity 0.86
+        match app-id="kitty"  // 终端
+        opacity 0.8
+        open-floating false
     }
 
     window-rule {
-    match app-id="code"
-    draw-border-with-background false
-    opacity 0.9
+        match app-id="code"
+        draw-border-with-background false
+        opacity 0.9
     } 
 
     window-rule {
-    match app-id="pycharm"
-    opacity 0.93
-    draw-border-with-background false
+        match app-id="pycharm"
+        opacity 0.93
+        draw-border-with-background false
     }
     window-rule {
-    match app-id="splayer"
-    draw-border-with-background false
+        match app-id="splayer"
+        draw-border-with-background false
     }
 
     window-rule {
-    match app-id="obsidian"
-    opacity 0.93
-    draw-border-with-background false
+        match app-id="obsidian"
+        opacity 0.93
+        draw-border-with-background false
     }

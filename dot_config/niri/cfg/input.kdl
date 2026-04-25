@@ -8,13 +8,6 @@ input {
         }
         numlock // Enable numlock on startup
     }
-    // cursor {
-        // 设置光标主题
-         //   theme {
-         //   name "Polarnight Cursor"
-         //   size 24
-      //  }
-  //  }
 
     touchpad {
         tap // Enable tap-to-click

@@ -1,5 +1,5 @@
     layout {
-        gaps 3 // Gap between windows
+        gaps 6 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
 
         background-color "transparent" // <- needed for noctalia-shell to set wallpaper
@@ -8,10 +8,11 @@
             proportion 0.33333
             proportion 0.5
             proportion 0.66667
+            proportion 1.0
         }
 
         focus-ring {
-            off
+            on
             width 1.5
             active-color "#66ccff"   // 活动窗口的边框颜色
             inactive-color "#888888" // 非活动窗口的边框颜色
