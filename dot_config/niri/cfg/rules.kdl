@@ -31,7 +31,7 @@
     window-rule {
         match app-id="code"
         draw-border-with-background false
-        opacity 0.9
+        opacity 0.8
     } 
 
     window-rule {
