@@ -11,7 +11,7 @@
 output "eDP-1" {
     mode "1920x1080@60.000" // Set resolution and refresh rate
     position x=1920 y=0
-    scale 1 // No scaling (use 2 for HiDPI)
+    scale 1.0 // No scaling (use 2 for HiDPI)
 }
 
 output "HDMI-A-1" {
