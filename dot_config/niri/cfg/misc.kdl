@@ -18,7 +18,7 @@
         QT_IM_MODULE "fcitx"
         XMODIFIERS "@im fcitx"
         SDL_IM_MODULE "fcitx"
-        GLFW_IM_MODULE "ibus"
+        GLFW_IM_MODULE "fcitx"
         XDG_MENU_PREFIX "arch-"
         GTK_ICON_THEME "Tela-circle"
     }
