@@ -15,6 +15,8 @@ binds {
     Mod+E                               { spawn "dolphin"; }              // 打开文件管理器: Nautilus（可按需替换）
     Mod+V                               { spawn "copyq" "toggle"; }
     Mod+D repeat=false                  { spawn "vicinae" "toggle"; }
+    MOD+P                               { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle";}
+    MOD+I                               { spawn-sh "qs -c noctalia-shell ipc call plugin openSettings $pluginId";}
     
     // ─── 媒体控制 ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }   // 音量+（锁屏时可用）
