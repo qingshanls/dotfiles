@@ -1,5 +1,5 @@
     window-rule {
-        geometry-corner-radius 2 // Set every window radius to 20
+        geometry-corner-radius 8 // Set every window radius to 20
         clip-to-geometry true
 
 
@@ -48,4 +48,13 @@
         match app-id="obsidian"
         opacity 0.8
         draw-border-with-background false
+    }
+
+    window-rule {
+        match app-id="dev.noctalia.Noctalia"
+        open-floating true
+        opacity 0.8
+        draw-border-with-background false
+        default-column-width { fixed 1080; }
+        default-window-height { fixed 920; }
     }

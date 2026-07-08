@@ -1,68 +1,68 @@
 [colors.primary]
 background = '#131313'
 foreground = '#e2e2e2'
- 
+
 [colors.cursor]
-text = '#e2e2e2'
-cursor = '#c6c6c6' 
- 
+text = '#131313'
+cursor = '#e2e2e2'
+
 [colors.vi_mode_cursor]
 text = '#131313'
-cursor = '#b1d26c' 
- 
+cursor = '#9bd67f'
+
 [colors.search.matches]
-foreground = '#474747' 
-background = '#a0d0c8' 
- 
+foreground = '#474747'
+background = '#a0cfd0'
+
 [colors.search.focused_match]
-foreground = '#474747' 
-background = '#b1d26c' 
- 
+foreground = '#474747'
+background = '#9bd67f'
+
 [colors.footer_bar]
-foreground = '#474747' 
-background = '#e2e2e2' 
- 
+foreground = '#474747'
+background = '#e2e2e2'
+
 [colors.hints.start]
-foreground = '#474747' 
-background = '#c2caaa' 
- 
+foreground = '#474747'
+background = '#bccbb0'
+
 [colors.hints.end]
-foreground = '#474747' 
-background = '#c2caaa' 
- 
+foreground = '#474747'
+background = '#bccbb0'
+
 [colors.selection]
-text = '#131313'
-background = '#b1d26c'
- 
- 
+text = '#c6c6c6'
+background = '#474747'
+
+
 [colors.normal]
-black = '#181818' 
-red = '#ffb4ab' 
-green = '#b1d26c' 
-yellow = '#4c6708' 
-blue = '#b1d26c' 
-magenta = '#a0d0c8' 
-cyan = '#c2caaa' 
-white = '#BAC2DE' 
- 
- 
+black   = '#474747'
+red     = '#ffb4ab'
+green   = '#9bd67f'
+yellow  = '#bccbb0'
+blue    = '#a0cfd0'
+magenta = '#9bd67f'
+cyan    = '#bccbb0'
+white   = '#e2e2e2'
+
+
 [colors.bright]
-black = '#585B70' 
-red = '#F38BA8' 
-green = '#A6E3A1' 
-yellow = '#F9E2AF' 
-blue = '#89B4FA' 
-magenta = '#F5C2E7' 
-cyan = '#94E2D5' 
-white = '#A6ADC8' 
- 
- 
+black   = '#919191'
+red     = '#ffb4ab'
+green   = '#9bd67f'
+yellow  = '#bccbb0'
+blue    = '#a0cfd0'
+magenta = '#9bd67f'
+cyan    = '#bccbb0'
+white   = '#e2e2e2'
+
+
 [colors.dim]
-black = '#45475A' 
-red = '#F38BA8' 
-green = '#A6E3A1' 
-yellow = '#F9E2AF' 
-blue = '#89B4FA' 
-magenta = '#F5C2E7' 
-cyan = '#94E2D5' 
-white = '#BAC2DE' 
+black   = '#474747'
+red     = '#ffb4ab'
+green   = '#9bd67f'
+yellow  = '#bccbb0'
+blue    = '#a0cfd0'
+magenta = '#9bd67f'
+cyan    = '#bccbb0'
+white   = '#e2e2e2'

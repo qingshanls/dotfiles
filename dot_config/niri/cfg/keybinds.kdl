@@ -11,26 +11,52 @@ binds {
     Mod+CTRL+Return                     { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }  // 打开应用启动器
     Mod+B                               { spawn "firefox-nightly"; }                 // 打开浏览器: Firefox
     Mod+ALT+L                           { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }          // 锁定屏幕
-    Mod+Shift+Q                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; } // 会话菜单（关机/重启/注销等）
+//    Mod+Shift+Q                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; } // 会话菜单（关机/重启/注销等）
     Mod+E                               { spawn "dolphin"; }              // 打开文件管理器: Nautilus（可按需替换）
-    Mod+V                               { spawn "copyq" "toggle"; }
+//    Mod+V                               { spawn "copyq" "toggle"; }
     Mod+D repeat=false                  { spawn "vicinae" "toggle"; }
-    MOD+P                               { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle";}
-    MOD+I                               { spawn-sh "qs -c noctalia-shell ipc call plugin openSettings $pluginId";}
-    
+//    MOD+P                               { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle";}
+//    MOD+I                               { spawn-sh "qs -c noctalia-shell ipc call plugin openSettings $pluginId";}
+
+
+    // Core Noctalia binds
+    Mod+Space   { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+S       { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+I       { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+P       { spawn-sh "noctalia msg session lock"; }
+    Mod+Shift+Q { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+Z { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+V       { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+F1      { spawn-sh "noctalia msg screenshot-region"; }
+
+
     // ─── 媒体控制 ───
-    XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }   // 音量+（锁屏时可用）
-    XF86AudioLowerVolume                allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }   // 音量-（锁屏时可用）
-    XF86AudioMute                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; } // 静音输出（锁屏时可用）
-    XF86AudioMicMute                    allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }  // 静音麦克风（锁屏时可用）
-    XF86AudioNext                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }        // 下一首（锁屏时可用）
-    XF86AudioPrev                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }    // 上一首（锁屏时可用）
-    XF86AudioPlay                       allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
-    XF86AudioPause                      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
+//    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }   // 音量+（锁屏时可用）
+//    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }   // 音量-（锁屏时可用）
+//    XF86AudioMute         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; } // 静音输出（锁屏时可用）
+//    XF86AudioMicMute      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }  // 静音麦克风（锁屏时可用）
+//    XF86AudioNext         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }        // 下一首（锁屏时可用）
+//    XF86AudioPrev         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }    // 上一首（锁屏时可用）
+//    XF86AudioPlay         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
+//    XF86AudioPause        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
 
     // ─── 亮度控制 ───
-    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }  // 亮度+（锁屏时可用）
-    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }  // 亮度-（锁屏时可用）
+//    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }  // 亮度+（锁屏时可用）
+//    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }  // 亮度-（锁屏时可用）
+
+    // Audio & Brightness
+    XF86AudioRaiseVolume    { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume    { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute           { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp     { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown   { spawn-sh "noctalia msg brightness-down"; }
+
+    XF86AudioNext   allow-when-locked=true { spawn-sh "noctalia msg media next"; }     
+    XF86AudioPrev   allow-when-locked=true { spawn-sh "noctalia msg media previous"; }    
+    XF86AudioPlay   allow-when-locked=true { spawn-sh "noctalia msg media playPause"; }   
+    XF86AudioPause  allow-when-locked=true { spawn-sh "noctalia msg media playPause"; }  
+
+
 
     // ─── 窗口管理：关闭与聚焦 ───
     Mod+Q                               { close-window; }                                           // 关闭当前窗口
