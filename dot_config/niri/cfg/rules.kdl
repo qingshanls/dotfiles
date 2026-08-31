@@ -29,6 +29,12 @@
     }
 
     window-rule {
+        match app-id="btop"  
+        opacity 0.8
+        open-floating false
+    }
+    
+    window-rule {
         match app-id="code"
         draw-border-with-background false
         opacity 0.8
