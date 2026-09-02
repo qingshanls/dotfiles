@@ -1,0 +1,87 @@
+theme = "ayu_dark"
+# icons = "nerd"
+
+# editor 编辑器
+[editor]
+
+# 真彩支持
+true-color = true
+auto-completion = true
+# auto-save = false
+auto-info = true
+# cursorcolumn = true # 光标列高亮
+cursorline = true # 光标 行高亮
+color-modes = true
+idle-timeout = 40
+# mouse = true
+# scrolloff = 5 # 滚动时上下边缘填充行数
+# scroll-lines = 3
+# line-number = "relative"  # 行号类型 absolute / relative 
+# rulers = [80, 120]   # 标尺
+
+# bufferline = "multiple"  # always | multiple | never
+# gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+
+[editor.lsp]
+display-messages = true # 服务器语言信息提示 
+# display-signature-help-docs = false
+display-inlay-hints = true # 默认 false 
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·"
+
+[editor.soft-wrap]
+enable = true
+# max-wrap = 20 
+# max-indent-retain = 40
+# wrap-indicator = "↪ "
+
+# 光标样式
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# 状态栏定义
+#editor.statusline]
+# [#2869] file-type-icon
+#left = ["mode", "spacer", "spinner", "spacer", "file-type-icon", "file-name", "file-modification-indicator"]
+#center = ["diagnostics","workspace-diagnostics"]
+#right = [ "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type", ]
+
+# 键盘布局
+[keys.normal]
+# use `li` or remap `after insert`
+a = ["move_char_right","insert_mode"]
+"C-s" = ":write"  # 原保存跳转列表位置，修改为 C-j
+"C-j" = ["save_selection"]
+"C-r" = ":reload"
+"C-z" = "normal_mode"     # replace suspend
+"C-q" = ":quit"
+"A-/" = "toggle_comments"
+"\\" = ":reflow" # |
+"X" = "extend_line_above"
+"Z" = { "Z" = [":quit"] }
+
+# macos 自动切换到英文环境
+"esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
+
+# space mode
+[keys.normal.space]
+"x" = ":buffer-close"
+"w" = { "r" = ":config-reload" }
+"." = "file_picker_in_current_buffer_directory"
+
+[keys.insert]
+"esc" = [":sh macism com.apple.keylayout.ABC", "normal_mode"]
+
+# [keys.select]

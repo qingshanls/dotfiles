@@ -1,0 +1,66 @@
+    window-rule {
+        geometry-corner-radius 8 // Set every window radius to 20
+        clip-to-geometry true
+
+
+        background-effect {
+            xray true
+            blur true
+            noise 0.09
+            saturation 1
+        }
+        
+    }
+
+    layer-rule {
+        match namespace="^noctalia-wallpaper*"
+        place-within-backdrop true
+    }
+
+    window-rule {
+        match app-id="copyq"
+        open-floating true
+    }
+
+    window-rule {
+        match app-id="kitty"  // 终端
+        opacity 0.8
+        open-floating false
+    }
+
+    window-rule {
+        match app-id="btop"  
+        opacity 0.8
+        open-floating false
+    }
+    
+    window-rule {
+        match app-id="code"
+        draw-border-with-background false
+        opacity 0.8
+    } 
+
+    window-rule {
+        match app-id="pycharm"
+        opacity 0.93
+        draw-border-with-background false
+    }
+    window-rule {
+        match app-id="splayer"
+        draw-border-with-background false
+    }
+
+    window-rule {
+        match app-id="obsidian"
+        opacity 0.8
+        draw-border-with-background false
+    }
+
+    window-rule {
+        match app-id="dev.noctalia.Noctalia"
+        open-floating true
+        opacity 0.8
+        draw-border-with-background false
+        default-column-width { fixed 1080; }
+        default-window-height { fixed 920; }
+    }
