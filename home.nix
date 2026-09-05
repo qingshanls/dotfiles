@@ -12,7 +12,6 @@
     "fastfetch".source = ./config/fastfetch;
     "niri".source = ./config/niri;
     "helix".source = ./config/helix;
-    "fish".source = ./config/fish;
   };
 
   # ===== 托管根目录文件 =====
