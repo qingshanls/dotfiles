@@ -12,10 +12,6 @@
         
     }
 
-    layer-rule {
-        match namespace="^noctalia-wallpaper*"
-        place-within-backdrop true
-    }
 
     window-rule {
         match app-id="copyq"
