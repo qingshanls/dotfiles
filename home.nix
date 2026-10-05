@@ -10,26 +10,21 @@
     "alacritty".source = ./config/alacritty;
     "kitty".source = ./config/kitty;
     "fastfetch".source = ./config/fastfetch;
-    "niri".source = ./config/niri;
+    # "niri".source = ./config/niri;
     "helix".source = ./config/helix;
-    "noctalia".source = ./config/noctalia;
   };
 
   # ===== 托管根目录文件 =====
-  # home.file = {
-  #   ".config/starship.toml".source = ./config/starship.toml;
-  # };
+  home.file = {
+    ".config/niri/config.kdl".source = ./config/niri/config.kdl;
+    ".config/niri/cfg".source = ./config/niri/cfg;
+  };
 
 
   # ===== 安装软件包 =====
   home.packages = with pkgs; [
-    # 示例：用 Nix 安装的软件
-    # git
-    # neovim
-    # htop
-    # ripgrep
-    # fd
-  ];
+  
+    ];
 
   programs.home-manager.enable = true;
 }
