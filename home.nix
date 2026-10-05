@@ -12,6 +12,7 @@
     "fastfetch".source = ./config/fastfetch;
     "niri".source = ./config/niri;
     "helix".source = ./config/helix;
+    "noctalia".source = ./config/noctalia;
   };
 
   # ===== 托管根目录文件 =====

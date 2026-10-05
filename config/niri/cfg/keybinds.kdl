@@ -11,7 +11,6 @@ binds {
     Mod+CTRL+Return                     { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }  // 打开应用启动器
     Mod+B                               { spawn "firefox-nightly"; }                 // 打开浏览器: Firefox
     Mod+ALT+L                           { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }          // 锁定屏幕
-//    Mod+Shift+Q                         { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; } // 会话菜单（关机/重启/注销等）
     Mod+E                               { spawn "dolphin"; }              // 打开文件管理器: Nautilus（可按需替换）
 //    Mod+V                               { spawn "copyq" "toggle"; }
     Mod+D repeat=false                  { spawn "vicinae" "toggle"; }
@@ -29,20 +28,6 @@ binds {
     Mod+V       { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+F1      { spawn-sh "noctalia msg screenshot-region"; }
 
-
-    // ─── 媒体控制 ───
-//    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume increase"; }   // 音量+（锁屏时可用）
-//    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume decrease"; }   // 音量-（锁屏时可用）
-//    XF86AudioMute         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteOutput"; } // 静音输出（锁屏时可用）
-//    XF86AudioMicMute      allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call volume muteInput"; }  // 静音麦克风（锁屏时可用）
-//    XF86AudioNext         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media next"; }        // 下一首（锁屏时可用）
-//    XF86AudioPrev         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media previous"; }    // 上一首（锁屏时可用）
-//    XF86AudioPlay         allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
-//    XF86AudioPause        allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call media playPause"; }   // 播放/暂停（锁屏时可用）
-
-    // ─── 亮度控制 ───
-//    XF86MonBrightnessUp                 allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness increase"; }  // 亮度+（锁屏时可用）
-//    XF86MonBrightnessDown               allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }  // 亮度-（锁屏时可用）
 
     // Audio & Brightness
     XF86AudioRaiseVolume    { spawn-sh "noctalia msg volume-up"; }
@@ -159,9 +144,10 @@ binds {
     Mod+W                               { toggle-column-tabbed-display; }                           // 切换列的标签页显示模式
 
     // ─── 截图功能 ───
-    ALT+F1                        { screenshot; }                                             // 全屏截图
-    CTRL+Shift+2                        { screenshot-screen; }                                      // 当前显示器截图
-    CTRL+Shift+3                        { screenshot-window; }                                      // 当前窗口截图
+    ALT+F1              {spawn "mark-shot";}
+    // ALT+F1                        { screenshot; }                                             // 全屏截图
+    // CTRL+Shift+2                        { screenshot-screen; }                                      // 当前显示器截图
+    // CTRL+Shift+3                        { screenshot-window; }                                      // 当前窗口截图
 
     // ─── 紧急逃脱键 ───
     // 当全屏应用拦截快捷键时使用，可禁用键盘快捷键拦截，恢复控制

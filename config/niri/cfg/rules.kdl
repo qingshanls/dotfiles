@@ -1,15 +1,15 @@
+    blur {
+        passes 2
+        offset 3.0
+        noise 0.02
+        saturation 1.4
+    }
+
+
     window-rule {
         geometry-corner-radius 8 // Set every window radius to 20
         clip-to-geometry true
-
-
-        background-effect {
-            xray true
-            blur true
-            noise 0.09
-            saturation 1
-        }
-        
+        draw-border-with-background false
     }
 
 
@@ -20,7 +20,7 @@
 
     window-rule {
         match app-id="kitty"  // 终端
-        opacity 0.8
+        opacity 0.75
         open-floating false
     }
 
