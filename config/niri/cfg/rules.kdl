@@ -5,9 +5,14 @@
         saturation 1.4
     }
 
+    layer-rule {
+        match namespace="^noctalia-backdrop$"
+        place-within-backdrop true
+    }
 
     window-rule {
         geometry-corner-radius 8 // Set every window radius to 20
+        opacity 1.0
         clip-to-geometry true
         draw-border-with-background false
     }
@@ -52,11 +57,6 @@
         draw-border-with-background false
     }
     
-    window-rule {
-        match app-id="Floral-notepaper"
-        opacity 0.8
-        draw-border-with-background false
-    }
     
     window-rule {
         match app-id="dev.noctalia.Noctalia"
@@ -66,3 +66,27 @@
         default-column-width { fixed 1080; }
         default-window-height { fixed 920; }
     }
+
+    window-rule {
+        match app-id="com.follow.clash"
+        open-floating true
+        default-column-width { fixed 896; }
+        default-window-height { fixed 733; }
+    }
+    
+    layer-rule {
+        match namespace="noctalia-wallpaper" 
+        place-within-backdrop true
+        background-effect {
+          blur true
+          xray false
+       }
+    }
+    
+    layer-rule {
+        match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+        background-effect {
+           xray false
+           blur false
+       }
+   }

@@ -14,8 +14,8 @@
         focus-ring {
             on
             width 1.5
-            active-color "#66ccff"   // 活动窗口的边框颜色
-            inactive-color "#888888" // 非活动窗口的边框颜色
+            // active-color "#66ccff"   // 活动窗口的边框颜色
+            // inactive-color "#888888" // 非活动窗口的边框颜色
         }
 
         struts {}
