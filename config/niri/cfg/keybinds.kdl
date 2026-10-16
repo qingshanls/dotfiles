@@ -141,6 +141,7 @@ binds {
     // ─── 显示模式 ───
     Mod+T                               { toggle-window-floating; }                                 // 切换窗口浮动/平铺模式
     Mod+F                               { fullscreen-window; }                                      // 切换窗口全屏
+    Mod+Shift+F                        { maximize-window-to-edges; }
     Mod+W                               { toggle-column-tabbed-display; }                           // 切换列的标签页显示模式
 
     // ─── 截图功能 ───
