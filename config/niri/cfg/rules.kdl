@@ -68,7 +68,7 @@
     window-rule {
         match app-id="com.follow.clash" //Flcash
         open-floating true
-        default-column-width { fixed 896; }
+        default-column-width { fixed 434; }
         default-window-height { fixed 733; }
     }
 
